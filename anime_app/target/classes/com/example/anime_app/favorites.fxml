@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- Define a VBox layout as the root node with specified properties -->
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anime_app.FavoritesController" prefWidth="650.0" prefHeight="380.0" fx:id="root" alignment="CENTER" spacing="20.0">
+    <children>
+        <!-- Inner VBox for the title label with styling -->
+        <VBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 10; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Label text="Your Favorite Animes" style="-fx-font-size: 24px; -fx-background-color: rgba(0, 0, 0, 0.6); -fx-text-fill: white; -fx-padding: 3; -fx-border-radius: 5; -fx-background-radius: 5;" />
+        </VBox>
+        <!-- ScrollPane to contain the GridPane for favorite animes -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <!-- GridPane to display favorite anime items with gaps between elements -->
+            <GridPane fx:id="favoritesGrid" hgap="10" vgap="10" style="-fx-background-color: transparent;">
+                <padding>
+                    <!-- Set padding around the GridPane -->
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </GridPane>
+        </ScrollPane>
+        <!-- HBox for action buttons at the bottom -->
+        <HBox spacing="10.0" alignment="CENTER">
+            <Button text="Back to Search" onAction="#goBackToSearch" /> <!-- Button to go back to the search view -->
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Define a VBox layout as the root node with specified properties -->
+<VBox fx:id="root" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anime_app.AnimeDetailsController" prefWidth="650.0" prefHeight="380.0">
+    <!-- Inner VBox for the title label with styling -->
+    <VBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 10; -fx-border-radius: 10; -fx-background-radius: 10;">
+        <Label fx:id="titleLabel" text="Anime Title" style="-fx-font-size: 24px; -fx-background-color: rgba(0, 0, 0, 0.6); -fx-text-fill: white; -fx-padding: 3; -fx-border-radius: 5; -fx-background-radius: 5;" />
+    </VBox>
+    <!-- HBox to hold the poster image and details -->
+    <HBox alignment="CENTER" spacing="20.0">
+        <!-- ImageView for displaying the anime poster -->
+        <ImageView fx:id="posterImageView" fitWidth="200" fitHeight="300" preserveRatio="true" style="-fx-border-color: orange; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;" />
+        <!-- VBox to display anime details -->
+        <VBox alignment="TOP_LEFT" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 10; -fx-border-radius: 10; -fx-background-radius: 10;" spacing="10.0">
+            <Label fx:id="yearLabel" text="Year: " />
+            <Label fx:id="ratedLabel" text="Rated: " />
+            <Label fx:id="releasedLabel" text="Released: " />
+            <Label fx:id="genreLabel" text="Genre: " />
+            <Label fx:id="writerLabel" text="Writer: " />
+            <Label fx:id="actorsLabel" text="Actors: " />
+            <Label fx:id="plotLabel" text="Plot: " wrapText="true" />
+            <Label fx:id="languageLabel" text="Language: " />
+            <Label fx:id="imdbRatingLabel" text="IMDB Rating: " />
+        </VBox>
+    </HBox>
+    <!-- VBox for user rating input -->
+    <VBox alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 10; -fx-border-radius: 10; -fx-background-radius: 10;">
+        <Label text="Rate this anime:" style="-fx-font-size: 14px; -fx-background-color: rgba(0, 0, 0, 0.6); -fx-text-fill: white; -fx-padding: 3; -fx-border-radius: 5; -fx-background-radius: 5;" />
+        <!-- HBox for radio buttons to rate the anime -->
+        <HBox alignment="CENTER" spacing="5.0">
+            <RadioButton fx:id="rating0" text="0" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <RadioButton fx:id="rating1" text="1" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <RadioButton fx:id="rating2" text="2" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <RadioButton fx:id="rating3" text="3" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <RadioButton fx:id="rating4" text="4" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <RadioButton fx:id="rating5" text="5" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 5; -fx-border-radius: 5; -fx-background-radius: 5;" />
+        </HBox>
+    </VBox>
+    <!-- HBox for action buttons at the bottom -->
+    <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 20 0 0 0;">
+        <Button text="Continue Browsing" onAction="#goBackToSearch"/> <!-- Button to go back to the search view -->
+        <Button text="Add/Delete Favorite" onAction="#toggleFavorite"/> <!-- Button to add or remove favorite -->
+    </HBox>
+</VBox>

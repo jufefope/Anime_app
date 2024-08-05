@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Define a VBox layout as the root node with specified properties -->
+<VBox fx:id="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anime_app.MainController" spacing="10" alignment="CENTER" prefWidth="650.0" prefHeight="380.0">
+    <children>
+        <!-- VBox for search input with styling -->
+        <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-border-color: orange; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Label text="Find your new anime!" style="-fx-padding: 5; -fx-font-size: 14px; -fx-text-alignment: center;" /> <!-- Label for the search prompt -->
+            <TextField fx:id="searchField" promptText="Enter Anime Name" maxWidth="200"/> <!-- TextField for entering anime names -->
+            <Button text="Search" onAction="#handleSearch"/> <!-- Button to initiate the search -->
+        </VBox>
+        <!-- ScrollPane to contain the GridPane for search results -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <!-- GridPane to display search results with gaps between elements -->
+            <GridPane fx:id="resultsGrid" hgap="10" vgap="10" style="-fx-background-color: transparent;">
+                <padding>
+                    <!-- Set padding around the GridPane -->
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </GridPane>
+        </ScrollPane>
+        <!-- Button to view the list of favorite animes -->
+        <Button text="View Favorites" onAction="#viewFavorites"/>
+    </children>
+</VBox>
